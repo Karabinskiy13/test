@@ -1,0 +1,19 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.product__image {
+    max-width: 500px;
+    max-height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+.product__name{
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    max-width: 40%;
+}

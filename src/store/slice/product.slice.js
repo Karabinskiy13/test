@@ -4,11 +4,10 @@ import {productService} from "../../services/product.service"
 
 export const getAllProducts = createAsyncThunk(
     'productSlice/getAllProducts',
-    async(_, {rejectWithValue})=>{
-        try{
+    async (_, {rejectWithValue}) => {
+        try {
             return await productService.getAll()
-        }
-        catch(e){
+        } catch (e) {
             rejectWithValue(e.message)
         }
     }
@@ -21,7 +20,8 @@ const productSlice = createSlice({
         status: null,
         error: null
     },
-    reducers: {},
+    reducers: {}
+    ,
     extraReducers: {
         [getAllProducts.pending]: (state) => {
             state.status = 'pending...';

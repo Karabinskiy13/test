@@ -1,5 +1,5 @@
 import React from 'react'
-import Products from "./components/ProductsComponent";
+import Products from "./components/ProductsListComponent/ProductsListComponent";
 
 
 function App() {

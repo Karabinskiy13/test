@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+}
+
+
+.search{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.search__input{
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}

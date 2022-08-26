@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getAllProducts} from "../store/slice";
-import ProductComponent from "./ProductComponent";
-import"./StyleForComponents.css"
+import {getAllProducts} from "../../store/slice";
+import ProductItemComponent from "../ProductItemComponent/ProductItemComponent";
+import "./ProductListStyle.css"
 
 
 const Products = () => {
@@ -13,9 +13,9 @@ const Products = () => {
     useEffect(() => {
         dispatch(getAllProducts());
     }, [dispatch]);
-    const [value, setValue] = useState('')
+    const [searchQuery, setSearchQuery] = useState('')
     const filteredProducts = products.filter(product => {
-        return product.name.toLowerCase().includes(value.toLowerCase())
+        return product.name.toLowerCase().includes(searchQuery.toLowerCase())
     })
 
     return (
@@ -26,11 +26,10 @@ const Products = () => {
                     type="text"
                     placeholder="search..."
                     className="search__input"
-                    onChange={(event) => setValue(event.target.value)}
+                    onChange={(event) => setSearchQuery(event.target.value)}
                 />
             </form>
-            {filteredProducts && filteredProducts.map(product => <ProductComponent key={product.id}
-                                                                                   product={product}/>)}
+            {filteredProducts && filteredProducts.map(product => <ProductItemComponent key={product.id} product={product}/>)}
         </div>
     )
 }

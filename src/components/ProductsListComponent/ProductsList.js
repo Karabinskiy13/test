@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {getAllProducts} from "../../store/slice";
-import ProductItemComponent from "../ProductItemComponent/ProductItemComponent";
+import ProductItem from "../ProductItemComponent/ProductItem";
 import "./ProductListStyle.css"
 
 
@@ -29,7 +29,7 @@ const Products = () => {
                     onChange={(event) => setSearchQuery(event.target.value)}
                 />
             </form>
-            {filteredProducts && filteredProducts.map(product => <ProductItemComponent key={product.id} product={product}/>)}
+            {filteredProducts && filteredProducts.map(product => <ProductItem key={product.id} product={product}/>)}
         </div>
     )
 }

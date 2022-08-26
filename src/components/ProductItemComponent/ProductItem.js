@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ProductItemStyle.css"
 
-const ProductItemComponent = ({product}) => {
+const ProductItem = ({product}) => {
     const {name, price, img} = product
     return (
         <div className="product">
@@ -14,4 +14,4 @@ const ProductItemComponent = ({product}) => {
     );
 };
 
-export default ProductItemComponent;
+export default ProductItem;
